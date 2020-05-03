@@ -1,0 +1,14 @@
+
+ol {list-style: none; counter-reset: li}
+
+li::before {content: counter(li); color: red;
+    display: inline-block; width: 1em;
+    margin-left: -1em}
+li {
+    list-style-type:none;
+    counter-increment: li
+}
+
+div.precautions-container{
+    margin: auto;
+}

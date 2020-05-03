@@ -1,0 +1,9 @@
+.nav-item:focus{  
+    outline: 0;
+}
+
+.login{
+    outline: 0;
+    position: absolute;
+    right: 10px;
+}

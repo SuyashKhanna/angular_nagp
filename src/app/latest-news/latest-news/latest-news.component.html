@@ -1,1 +1,12 @@
-<p>latest-news works!</p>
+<button *ngIf="loginState" (click)="addNews()">ADD NEWS</button>
+
+<div *ngFor="let newsitem of news">
+    <span>
+        News Summary : {{newsitem.summary}} <br>
+        <span>
+            Description : {{newsitem.description}}
+        </span>
+    </span>
+    <br>
+    <br>
+</div>

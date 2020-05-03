@@ -1,1 +1,9 @@
-<p>nav-bar works!</p>
+<mat-toolbar color="secondary">
+    <div *ngFor="let navItem of navItemList">
+        <app-nav-bar-item class="nav-item" [routerLink]=navItem.route isActive={{navItem.isSelected}}>{{navItem.name}}
+        </app-nav-bar-item>
+    </div>
+    <div  class="login">
+        <app-nav-bar-item class="nav-item" (click) = "click()">{{loginText}}</app-nav-bar-item>
+    </div>
+</mat-toolbar>

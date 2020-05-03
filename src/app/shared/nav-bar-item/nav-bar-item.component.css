@@ -1,0 +1,15 @@
+p.nav-item{
+    padding: 12px;
+    margin: auto;
+    font-size: 14px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+p.nav-item:hover{
+    color: gray;
+}
+
+p.nav-item.active{
+    border-bottom: 2px solid #673ab7;
+}

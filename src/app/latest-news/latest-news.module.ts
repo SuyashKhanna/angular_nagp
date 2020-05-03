@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LatestNewsComponent } from './latest-news/latest-news.component';
 import { AddNewsComponent } from './add-news/add-news.component';
-import { Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
+import { LatestNewsRoutingModule } from './latest-news-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 export const latestNewsRoutes: Routes = [
   {path:'', component: LatestNewsComponent},
@@ -12,7 +15,10 @@ export const latestNewsRoutes: Routes = [
 @NgModule({
   declarations: [LatestNewsComponent, AddNewsComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    LatestNewsRoutingModule,
+    RouterModule,
+    ReactiveFormsModule
   ]
 })
 export class LatestNewsModule { }

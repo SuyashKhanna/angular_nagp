@@ -1,1 +1,32 @@
-<p>state-list works!</p>
+<div *ngIf="stateData != undefined && stateData.statewise
+!= undefined && stateData.statewise.length > 0">
+    <table mat-table [dataSource]="stateData.statewise">
+        <ng-container matColumnDef="state">
+            <th mat-header-cell *matHeaderCellDef> State </th>
+            <td mat-cell *matCellDef="let data">
+                <div class="state"[routerLink]="['/dashboard/districtlist',data.state]">
+                    {{data.state}}
+                </div>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="active">
+            <th mat-header-cell *matHeaderCellDef> Active </th>
+            <td mat-cell *matCellDef="let data"> {{data.active}} </td>
+        </ng-container>
+        <ng-container matColumnDef="confirmed">
+            <th mat-header-cell *matHeaderCellDef> Confirmed </th>
+            <td mat-cell *matCellDef="let data"> {{data.confirmed}} </td>
+        </ng-container>
+        <ng-container matColumnDef="deaths">
+            <th mat-header-cell *matHeaderCellDef> Deceased </th>
+            <td mat-cell *matCellDef="let data"> {{data.deaths}} </td>
+        </ng-container>
+        <ng-container matColumnDef="recovered">
+            <th mat-header-cell *matHeaderCellDef> Recovered </th>
+            <td mat-cell *matCellDef="let data"> {{data.recovered}} </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+    </table>
+</div>

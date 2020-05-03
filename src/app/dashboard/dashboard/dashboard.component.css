@@ -1,0 +1,7 @@
+.dashboard{
+  border: 1px solid grey;
+  padding: 10px;
+  box-shadow: 1px 1px gainsboro;
+  border-radius : 10px;
+  margin: 40px;
+}

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-nav-bar-item',
@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarItemComponent implements OnInit {
 
+  @Input() isActive:boolean
   constructor() { }
 
   ngOnInit(): void {

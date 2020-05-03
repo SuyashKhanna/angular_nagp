@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { IStateDataList } from 'src/app/core/interfaces/IStateDataList';
+import { CovidmetricsService } from 'src/app/core/services/covidmetrics.service';
 
 @Component({
   selector: 'app-state-list',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StateListComponent implements OnInit {
 
-  constructor() { }
+  stateData : IStateDataList
+  columnsToDisplay = ['state', 'active','confirmed','deaths','recovered'];
+  constructor(private coviddataService : CovidmetricsService) { }
 
   ngOnInit(): void {
+    this.coviddataService.getCovidStateWiseData()
+                         .subscribe((result) => {
+                           this.stateData = result
+                         });
   }
-
 }
